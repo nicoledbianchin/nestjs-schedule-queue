@@ -11,6 +11,9 @@ export class TweetsCountService {
 
     @Interval(5000)
     async countTweets() {
-        console.log('executou')
+        const tweets = this.tweetModel.findAll({
+            offset: 0,
+            limit: 10
+        });
     }
 }
